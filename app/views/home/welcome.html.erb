@@ -1,6 +1,6 @@
-<h1>Boas vindas à Task List!</h1>
-<p>Isto é uma página HTML</p>
-<em>Criada em <%= Date.today  %></em>
+<h1>Bem vindo à sua Lista de Tarefa!</h1>
+<em> <%= Date.today.strftime("Hoje é dia %d/%m/%Y")%></em>
+<p>O que preciso fazer ?</p>
 
 <% @tasks.each do |task| %>
   <p> <%= task.description %>
@@ -9,3 +9,5 @@
           data: {confirm: 'Quer apagar esta tarefa?'} %>
   </p>
 <% end %>
+
+<p><%= link_to '+ Nova Tarefa', new_task_url %></p>
